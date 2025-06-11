@@ -693,7 +693,7 @@ button:hover {
 }
 .popup-content {
   margin-top: 50px;
-  background: url('images/flower.jpg') no-repeat center center / cover;
+  background: url('images/contactus1.avif') no-repeat center center / cover;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 12px;
@@ -707,12 +707,38 @@ button:hover {
   text-align: center;
   max-width: 600px;
   width: 90%;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-  animation: fadeInUp 0.4s ease forwards;
+  animation: fadeInUp 0.4s ease forwards, pulse 2s infinite ease-in-out;
 }
+/* Optional hover effect for added 3D interaction */
+.popup-content:hover {
+  transform: rotateX(4deg) rotateY(-4deg) scale(1.02);
+  box-shadow:
+    0 8px 16px rgba(0, 0, 0, 0.3),
+    0 12px 24px rgba(0, 0, 0, 0.2),
+    inset 0 0 15px rgba(255, 255, 255, 0.4);
+}
+/* Pulse animation */
+@keyframes pulse {
+  0% {
+    transform: rotateX(1deg) rotateY(-1deg) scale(1);
+  }
+  50% {
+    transform: rotateX(1deg) rotateY(-1deg) scale(1.02);
+  }
+  100% {
+    transform: rotateX(1deg) rotateY(-1deg) scale(1);
+  }
+}
+/* Existing fade-in animation (if not already defined) */
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(20px) rotateX(1deg) rotateY(-1deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(1deg) rotateY(-1deg);
+  }
 }
 .popup h3 {
   font-family: 'Great Vibes', cursive;
