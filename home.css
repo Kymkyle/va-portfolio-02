@@ -923,7 +923,9 @@ button:hover {
     font-size: 14px;
     font-weight: 400;
   }
-
+  .contact {
+    background: linear-gradient(135deg, #07764b, #145c48);
+  }
   .tag-line1 {
     display: flex;
     text-align: justify;
